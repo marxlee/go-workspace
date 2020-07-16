@@ -71,11 +71,11 @@ import (
 
 // quickstart
 var (
-	redisPool redis.Pool
+	redisPool *redis.Pool
 )
 
 func init()  {
-	redisPool = redis.Pool{
+	redisPool = &redis.Pool{
 		MaxIdle:     8,
 		MaxActive:   0,
 		IdleTimeout: 100,
