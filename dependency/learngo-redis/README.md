@@ -1,22 +1,15 @@
-# GO Connect
-Go橙所需要的依赖
+# Redis Go
 
-## web应用包
+## 参考文档(docx):  
 
-### Redis
+1. Redis-go-redis操作指南.docx  
+2. Redis-redigo操作指南.docx  
 
-请阅读 README.md
-
-#### Doc: 
->$ cd ./dependency/learngo-redis  
-
-Redis-go-redis操作指南.docx  
-Redis-redigo操作指南.docx  
-
-#### Redis中国官方网站操作手册
+## Redis中国官方网站操作手册
 http://redis.cn/
 
-#### 1. import redis-gomodule tool 一个简单的redis链接库
+## QuickStart
+#### 1. 一个相对底层的redis链接库
 https://github.com/gomodule/redigo/redis
 
 > go get github.com/gomodule/redigo/redis
@@ -38,7 +31,7 @@ func main() {
 	defer conn.Close()
 }
 ```
-#### 2. import redis-module 封装了命令的redis链接库
+#### 2. 封装接近命令行cmd的redis链接库
 https://github.com/go-redis/redis
 
 > go get github.com/go-redis/redis/v8
@@ -65,12 +58,15 @@ func ExampleNewClient() {
 }
 ```
 
-#### 3. 连接池 pool
+#### 3. 使用连接池 redis.Pool
+
+> go get github.com/gomodule/redigo/redis
+
 ```
 // quickstart
 import (
     "context"
-    "github.com/go-redis/redis/v8"  
+    "github.com/gomodule/redigo/redis" 
 )
 
 // quickstart
@@ -95,13 +91,4 @@ func main() {
     // cooding...
 }
 ```
-
-
-
-
-
-
-
-
-
 
