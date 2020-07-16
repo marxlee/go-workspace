@@ -24,6 +24,7 @@ import (
 )
 
 func main() {
+    // 链接 host + port
 	conn, err := redis.Dial("tcp", "localhost:6379")
 	if err != nil{
 		fmt.Println("connect err...")
@@ -42,8 +43,6 @@ import (
     "context"
     "github.com/go-redis/redis/v8"  
 )
-
-var ctx = context.Background()
 
 func ExampleNewClient() {
     rdb := redis.NewClient(&redis.Options{
@@ -76,10 +75,11 @@ var (
 
 func init()  {
 	redisPool = &redis.Pool{
-		MaxIdle:     8,
-		MaxActive:   0,
-		IdleTimeout: 100,
+		MaxIdle:     8, // 空闲时最大链接数
+		MaxActive:   0, // 最大活动连接数
+		IdleTimeout: 100,   // 超时时间 ms
 		Dial: func() (redis.Conn, error) {
+            // 链接 host+port
 			return redis.Dial("tcp", "localhost:6379")
 		},
 	}
