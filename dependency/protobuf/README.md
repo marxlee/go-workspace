@@ -107,4 +107,10 @@ service OrderService{
 # 编译文件
 $ protoc --go_out=. *.proto
 
+# 如果定义的.proto文件，如本案例中所示，定义中包含了服务接口的定义，而我们想要使用gRPC框架实现RPC调用。
+# 开发者可以采用protocol-gen-go库提供的插件编译功能，生成兼容gRPC框架的golang语言代码。
+# 只需要在基本编译命令的基础上，指定插件的参数，告知protoc编译器即可。
+# 具体的编译生成兼容gRPC框架的服务代码的命令如下：
+$ protoc --go_out=plugins=grpc:. *.proto
+
 ```
