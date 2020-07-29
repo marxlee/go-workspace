@@ -14,7 +14,7 @@ protobuf是Google开发的一种数据描述语言，能够将结构化的数据
 * 更好的兼容性： Protobuf设计的一个原则就是要能够很好地向下或向上兼容
 
 ## 安装
-1、从https://github.com/protocolbuffers/protobuf/releases获取Protobuf编译器protoc
+####  1. 从 https://github.com/protocolbuffers/protobuf/releases 获取Protobuf编译器protoc
 ```
 wget https://github.com/protocolbuffers/protobuf/releases/download/v3.6.1/protobuf-all-3.6.1.tar.gz
 
@@ -47,7 +47,7 @@ libprotoc 3.6.1
 安装成功！
 ```
 
-2、获取 goprotobuf 提供的 Protobuf 插件 protoc-gen-go（保存到 $GOPATH/bin 下，$GOPATH/bin 应该被加入 PATH 环境变量，以便 protoc 能夠找到 protoc-gen-go）
+#### 2. 获取 goprotobuf 提供的 Protobuf 插件 protoc-gen-go（保存到 $GOPATH/bin 下，$GOPATH/bin 应该被加入 PATH 环境变量，以便 protoc 能夠找到 protoc-gen-go）
 
 此插件被 protoc 使用，用与边缘 .proto 文件为 Golang 原文件（.proto->.pb.go），通过此原文件（.pb.go）可以使用定义在 .proto 文件中的消息。
 ```
@@ -68,7 +68,7 @@ export PATH=$PATH:$GOPATH/bin
 source ～/.bashrc
 ```
 
-3、获取 goprotobuf 提供的支持库，包括序列号（marshaling）、反序列化（unmarshaling）等功能
+#### 3. 获取 goprotobuf 提供的支持库，包括序列号（marshaling）、反序列化（unmarshaling）等功能
 ```
 go get github.com/golang/protobuf/proto
 
@@ -77,4 +77,34 @@ cd $GOPATH/src/github.com/golang/protobuf/proto
 go build
 
 go install
+```
+
+#### 4. 创建proto编译文件
+order.proto
+```
+syntax = "proto3";
+package message;
+
+//订单请求参数
+message OrderRequest {
+    string orderId = 1;
+    int64 timeStamp = 2;
+}
+
+//订单信息
+message OrderInfo {
+    string OrderId = 1;
+    string OrderName = 2;
+    string OrderStatus = 3;
+}
+
+//订单服务service定义
+service OrderService{
+    rpc GetOrderInfo(OrderRequest) returns (OrderInfo);
+}
+
+
+# 编译文件
+$ protoc --go_out=. *.proto
+
 ```
