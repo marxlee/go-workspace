@@ -26,8 +26,8 @@ $ export GOPROXY=https://goproxy.cn
 
 ### 1. 项目目录下创建go.mod文件
 ```
-# 初始化mod文件, 配合生成go.sum
-go mod init
+# 初始化mod文件, 配合生成go.sum, github.com/xxx/project-go 表示未来提交github后的地址
+go mod init github.com/xxx/project-go
 
 # 查看当前依赖项
 go list -m add
