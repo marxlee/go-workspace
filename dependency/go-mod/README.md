@@ -36,5 +36,7 @@ go list -m add
 ```
 # 如果项目中已初始化go.mod文件 则执行以下依赖会直接将包加入到本地pkg目录下
 go get -u google.golang.org/protobuf/proto
+# 亦或 注意, 内部import一定要正确
+protoc --proto_path src/ --go_out=src/ src/pb/*.proto
 ```
 
