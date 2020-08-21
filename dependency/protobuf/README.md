@@ -113,4 +113,10 @@ $ protoc --go_out=. *.proto
 # 具体的编译生成兼容gRPC框架的服务代码的命令如下：
 $ protoc --go_out=plugins=grpc:. *.proto
 
+# 亦或 注意, 内部import一定要正确
+protoc --proto_path src/ --go_out=src/ src/pb/*.proto
+
+# 使用go-rpc生成文件: [proto_path]路径src/protos下的所有.proto文件, [go_out]地址为:./src/pb_go
+protoc --proto_path=./src/protos ./src/protos/*.proto --go_out=plugins=grpc:./src/pb_go
+
 ```
