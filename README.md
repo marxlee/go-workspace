@@ -9,7 +9,7 @@ Go橙所需要的依赖
 http://redis.cn/
 
 ##### 目录文件夹: 
-[GOTO ./dependency/learngo-redis/README.md](./dependency/learngo-redis) 
+[./dependency/learngo-redis/README.md](./dependency/learngo-redis) 
 
 
 ### 2. GO MODULE
@@ -17,7 +17,7 @@ http://redis.cn/
 #### Go Module模块化管理工具
 
 ##### 目录文件夹: 
-[GOTO ./dependency/go-mod/README.md](./dependency/go-mod) 
+[./dependency/go-mod/README.md](./dependency/go-mod) 
 
 
 ### 3. GO Protobuf
@@ -25,7 +25,7 @@ http://redis.cn/
 #### Go Protobuf 消息传输协议
 
 ##### 目录文件夹: 
-[GOTO ./dependency/protobuf/README.md](./dependency/protobuf) 
+[./dependency/protobuf/README.md](./dependency/protobuf) 
 
 
 ### 4. GO WEB
@@ -33,7 +33,14 @@ http://redis.cn/
 #### Go web应用
 
 ##### 目录文件夹: 
-[GOTO ./dependency/webapp/README.md](./dependency/webapp) 
+[./dependency/webapp/README.md](./dependency/webapp) 
 
 
 ### 5. Gin Web Framework
+
+#### Go web 框架
+
+##### 目录文件夹: 
+[./dependency/gin/README.md](./dependency/gin) 
+
+
