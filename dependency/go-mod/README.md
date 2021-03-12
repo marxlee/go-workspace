@@ -16,10 +16,13 @@ program/
 
 ## 加入代理, 开启mod
 ```
+-------------------MAC-----------------------
 # GO111MODULE 是1.11 版本以后加入的内容, 13版本之后是可以不需要设置的
 $ export GO111MODULE=on
 # 国内代理
 $ export GOPROXY=https://goproxy.cn
+--------------------Windows-----------------------
+$ go env -w GOPROXY=https://goproxy.cn
 ```
 
 ## 如何使用 go mod
